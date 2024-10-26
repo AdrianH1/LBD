@@ -4,13 +4,14 @@
 #include <string>
 #include <vector>
 
+#include "..\IApplication.hpp"
 
-class Example
+class Example : public IApplication
 {
 public:
-    Example(std::vector<std::pair<std::string, std::function<void()>>>& projects);
+    Example();
 private:
-    void doStuff();
+    void startApp() override;
 
     std::string m_someString{ "someText" };
 };

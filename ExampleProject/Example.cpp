@@ -1,13 +1,12 @@
 #include <iostream>
 #include "Example.hpp"
 
-Example::Example(std::vector<std::pair<std::string, std::function<void()>>>& projects)
+Example::Example()
 {
-    std::pair<std::string, std::function<void()>> somePair{ "exampleProject",  std::bind(&Example::doStuff, this) };
-    projects.emplace_back(somePair);
+    addToProjects("ExampleProject");
 }
 
-void Example::doStuff()
+void Example::startApp()
 {
     std::cout << "Output from ExampleProject: " << m_someString << std::endl;
 }

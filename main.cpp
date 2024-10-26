@@ -2,13 +2,12 @@
 #include <vector>
 #include <functional>
 
-#include "OverallHelper.hpp"
+#include "CommonDefinitions.hpp"
 
 #include "ExampleProject/Example.hpp"
 
 namespace
 {
-projectList projects{};
 bool run = false;
 }
 
@@ -19,23 +18,23 @@ void stopApp()
 
 int main(int argc, char const *argv[])
 {
-    projects.emplace_back("Stop App", stopApp);
+    Common::getList().emplace_back("Stop App", stopApp);
 
-    Example example{ projects };
+    Example example{};
     run = true;
     int projNum = 0;
     int choosenNum = 0;
 
     do
     {
-        for (const auto& project : projects)
+        for (const auto& project : Common::getList())
         {
             std::cout << projNum << ". " << project.first << std::endl;
             ++projNum;
         }
         projNum = 0;
         std::cin >> choosenNum;
-        projects.at(choosenNum).second();
+        Common::getList().at(choosenNum).second();
 
     } while (run);
 
