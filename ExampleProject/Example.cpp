@@ -3,12 +3,10 @@
 
 Example::Example()
 {
-    addToProjects("ExampleProject");
+    addToProjects("ExampleProject", "ExampleDescription");
 }
 
 void Example::startApp()
 {
-    std::cout << "Output from ExampleProject: " << m_someString << std::endl;
+    std::cout << "Output from ExampleProject" << std::endl;
 }
-
-// []() { std::cout << "some Output" << std::endl; }

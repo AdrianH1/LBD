@@ -7,9 +7,18 @@
 
 namespace Common
 {
-using projectList_t = std::vector<std::pair<std::string, std::function<void()>>>;
+
+struct project_s
+{
+    std::string name{};
+    std::string description{};
+    std::function<void()> startFunc;
+};
+using projectList_t = std::vector<project_s>;
+
 inline projectList_t& getList() {
     static projectList_t projects;
     return projects;
 }
-}
+
+}// namespace Common

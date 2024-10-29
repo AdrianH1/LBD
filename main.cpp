@@ -14,11 +14,13 @@ bool run = false;
 void stopApp()
 {
     run = false;
+    std::cout << "End of application" << std::endl;
 }
 
 int main(int argc, char const *argv[])
 {
-    Common::getList().emplace_back("Stop App", stopApp);
+    Common::project_s stopProj{ "Stop App", "stops app execution", stopApp };
+    Common::getList().emplace_back(stopProj);
 
     Example example{};
     run = true;
@@ -29,12 +31,16 @@ int main(int argc, char const *argv[])
     {
         for (const auto& project : Common::getList())
         {
-            std::cout << projNum << ". " << project.first << std::endl;
+            std::cout << projNum << ". " << project.name << std::endl;
+            std::cout << project.description << std::endl;
+            std::cout << "-----------------------------------------------" << std::endl;
             ++projNum;
         }
         projNum = 0;
         std::cin >> choosenNum;
-        Common::getList().at(choosenNum).second();
+        std::cout << "//////////////////////////////////////////////" << std::endl;
+        Common::getList().at(choosenNum).startFunc();
+        std::cout << "//////////////////////////////////////////////" << std::endl;
 
     } while (run);
 

@@ -12,6 +12,4 @@ public:
     Example();
 private:
     void startApp() override;
-
-    std::string m_someString{ "someText" };
 };
