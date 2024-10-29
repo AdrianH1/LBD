@@ -5,6 +5,7 @@
 #include "CommonDefinitions.hpp"
 
 #include "ExampleProject/Example.hpp"
+#include "OOPProject/OOP.hpp"
 
 namespace
 {
@@ -23,6 +24,8 @@ int main(int argc, char const *argv[])
     Common::getList().emplace_back(stopProj);
 
     Example example{};
+    OOP oop{};
+
     run = true;
     int projNum = 0;
     int choosenNum = 0;
