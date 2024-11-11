@@ -13,6 +13,11 @@ public:
     void lendOut() override;
     void mediaReturned() override;
 
+    void setCoverQuote(const std::string& quote);
+    std::string getCoverQuote();
+    void setCoverDesc(const std::string& description);
+    std::string getCoverDesc();
+
 private:
     std::string m_coverQuote{};
     std::string m_coverDescription{};
