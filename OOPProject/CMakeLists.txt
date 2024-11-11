@@ -1,5 +1,6 @@
 set(HEADERS
     OOP.hpp
+    IMedia.hpp
 )
     
 set(SOURCES
