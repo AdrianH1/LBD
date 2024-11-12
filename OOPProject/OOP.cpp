@@ -1,6 +1,8 @@
 #include <iostream>
 #include "OOP.hpp"
 
+#include "CLibrary.hpp"
+
 OOP::OOP()
 {
     addToProjects("OOPProject", "Library Management to show encapsulation, inheritance, polymorphism and abstraction");

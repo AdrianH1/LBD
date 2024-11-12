@@ -16,8 +16,9 @@ enum class e_type
 class IMedia
 {
 public:
-    IMedia(std::string title, e_type type)
-        : m_title(title)
+    IMedia(int id, std::string& title, e_type& type)
+        : m_id(id)
+        , m_title(title)
         , m_type(type)
     {
     }
@@ -46,6 +47,7 @@ protected:
     e_type m_type;
 
 private:
+    int m_id;
     bool m_available;
 
     std::mutex m_mutex;

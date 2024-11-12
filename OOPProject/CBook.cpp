@@ -4,8 +4,8 @@ namespace Library
 {
 
 //-------------------------------------------------
-CBook::CBook(std::string title, e_type type)
-    : IMedia(title, type)
+CBook::CBook(int id, std::string title, e_type type)
+    : IMedia(id, title, type)
 {
 
 }
